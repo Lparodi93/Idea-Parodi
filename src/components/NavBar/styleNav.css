@@ -1,0 +1,30 @@
+.containerHeader {
+    background-image: linear-gradient(to left, #310b0b, #500b0b, black);
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.containerHeader h1 {
+    color: wheat;
+}
+
+.containerList {
+    width: 50%;
+    display: flex;
+    justify-content: flex-end;
+    list-style: none;
+}
+
+.containerList li a {
+    font-size: 20px;
+    text-decoration: none;
+    padding: 10px;
+    color: wheat;
+}
+
+@media screen and (max-width: 1024px) {
+    .containerHeader h1 {
+        display: none;
+    }
+}
