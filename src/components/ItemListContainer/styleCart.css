@@ -1,0 +1,12 @@
+.containerProduct {
+    background-color: wheat;
+    height: 100vh;
+}
+
+.titleProduct {
+    margin-top: auto;
+    background-color: black;
+    padding: 15px;
+    font-size: 20px;
+    font-family: sans-serif;
+}

@@ -1,12 +1,14 @@
 import React from 'react';
-import './styleNav.css'
+import  './styleNav.css'
+import CartWidget from '../CartWidget/CartWidget';
+import Logo from './Logo.png'
 
 function navBar(props) {
     return (
         <div className='containerHeader'>
 
             <div>
-                <img src="/assets/logo.png" width={150} alt="" className="logo" />
+                <a href="#"><img src={Logo} width={150} alt="logo"/></a>
             </div>
 
             <div>
@@ -20,6 +22,8 @@ function navBar(props) {
                 <li><a href="#">Contacto</a></li>
                 <li><a href="#">Consejos</a></li>
             </ul>
+
+            <CartWidget/>
         </div>
     );
 }
