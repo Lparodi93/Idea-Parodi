@@ -1,0 +1,39 @@
+.containerCount {
+    display: flex;
+    justify-content: center;
+}
+
+.containerCount .count {
+    width: 20%;
+    border-radius: 10px;
+    background-color: rgb(204, 204, 204);
+    box-shadow: 1px 1px 5px black;
+}
+
+.controlContainer {
+    display: flex;
+    justify-content: center;
+    padding: 15px;
+}
+
+.controlContainer .control {
+    display: flex;
+    width: 70%;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 5px;
+    background-color: rgb(162, 162, 162);
+}
+
+.control button {
+    height: 25px;
+}
+
+.btnCarrito {
+    padding: 15px;
+}
+
+.btn {
+    padding: 10px;
+    border-radius: 10px;
+}
