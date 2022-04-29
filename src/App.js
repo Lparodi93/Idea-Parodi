@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import NavBar from './components/NavBar/NavBar';
 import ItemListContainer from './components/ItemListContainer/ItemListContainer'
@@ -8,9 +7,9 @@ function App() {
     
     <div className="App">
       <NavBar />
-      <ItemListContainer greeting='Mi Contenedor De Productos' color='white' />
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+      <ItemListContainer greeting='Mi Contenedor De Productos' color='white'/>
+   {/*    <header className="App-header">
+        
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
@@ -22,7 +21,7 @@ function App() {
         >
           Learn React
         </a>
-      </header>
+      </header> */}
     </div>
   );
 }

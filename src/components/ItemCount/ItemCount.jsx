@@ -5,16 +5,14 @@ function ItemCount({stock, initial, onAdd}) {
     const [count, setCount] = useState(initial);
 
     const increment = () => {
-        const newValue = count + onAdd;
-        if (newValue <= stock) {
-            setCount(newValue);
+        if (count < stock) {
+            setCount(count +1);
         }
     } 
 
     const decrement = () => {
-        const newValue = count - onAdd;
-        if (newValue >= initial){
-            setCount(newValue);
+        if (count > initial){
+            setCount(count - 1);
         }
     }
 
@@ -46,4 +44,4 @@ function ItemCount({stock, initial, onAdd}) {
     );
 }
 
-export default ItemCount;
+//export default ItemCount;
