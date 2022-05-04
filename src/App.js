@@ -1,14 +1,16 @@
 import './App.css';
 import NavBar from './components/NavBar/NavBar';
-import ItemListContainer from './components/ItemListContainer/ItemListContainer'
+//import ItemListContainer from './components/ItemListContainer/ItemListContainer'
+import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
 
 function App() {
   return (
-    
+
     <div className="App">
       <NavBar />
-      <ItemListContainer greeting='Mi Contenedor De Productos' color='white'/>
-   {/*    <header className="App-header">
+      <ItemDetailContainer />
+      {/*  <ItemListContainer greeting='Mi Contenedor De Productos' color='white'/> */}
+      {/*    <header className="App-header">
         
         <p>
           Edit <code>src/App.js</code> and save to reload.

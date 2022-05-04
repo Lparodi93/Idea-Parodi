@@ -1,13 +1,7 @@
-.containerCount {
-    display: flex;
-    justify-content: center;
-}
-
 .containerCount .count {
-    width: 20%;
     border-radius: 10px;
     background-color: rgb(204, 204, 204);
-    box-shadow: 1px 1px 5px black;
+    padding: 5px;
 }
 
 .controlContainer {

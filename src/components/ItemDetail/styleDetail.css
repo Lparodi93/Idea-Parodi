@@ -1,0 +1,33 @@
+.itemContainer {
+    background-color: bisque;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.countContainer{
+    width: 30%;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: rgb(162, 162, 162);
+    box-shadow: 2px 2px black;
+}
+
+.imgContainer{
+    width: 30%;
+}
+
+.imgContainer img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.priceProduct{
+    font-size: 25px;
+    font-weight: 700;
+    color: white;
+    background-color: brown;
+    border-radius: 5px;
+}

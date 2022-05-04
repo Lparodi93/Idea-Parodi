@@ -24,9 +24,6 @@ function ItemCount({stock, initial, onAdd}) {
     return (
         <div className='containerCount'>
             <div className='count'>
-                <div>
-                    <h2>Tabaco Flandria</h2>
-                </div>
 
                 <div className='controlContainer'>
                     <div className='control'>
@@ -44,4 +41,4 @@ function ItemCount({stock, initial, onAdd}) {
     );
 }
 
-//export default ItemCount;
+export default ItemCount;
