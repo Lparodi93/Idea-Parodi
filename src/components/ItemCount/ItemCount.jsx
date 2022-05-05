@@ -1,24 +1,24 @@
 import React, { useState } from 'react';
 import './styleCount.css'
 
-function ItemCount({stock, initial, onAdd}) {
+function ItemCount({ stock, initial, onAdd }) {
     const [count, setCount] = useState(initial);
 
     const increment = () => {
         if (count < stock) {
-            setCount(count +1);
+            setCount(count + 1);
         }
-    } 
+    }
 
     const decrement = () => {
-        if (count > initial){
+        if (count > initial) {
             setCount(count - 1);
         }
     }
 
     const addToCart = () => {
         const msj = `Agregaste ${count} productos al carrito`;
-        count == 1 ? alert(`Agregaste ${count} producto al carrito`) : alert(msj); 
+        count == 1 ? alert(`Agregaste ${count} producto al carrito`) : alert(msj);
     }
 
     return (

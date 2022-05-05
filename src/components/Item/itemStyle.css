@@ -1,6 +1,14 @@
 .cardContainer {
     display: flex;
-
     justify-content: center;
     border: 2px solid greenyellow;
+}
+
+.goData button {
+    border: none;
+    color: white;
+    text-decoration: none;
+    border-radius: 10px;
+    padding: 5px;
+    background-color: brown;
 }

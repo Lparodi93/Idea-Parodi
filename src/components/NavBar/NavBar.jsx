@@ -1,14 +1,15 @@
 import React from 'react';
-import  './styleNav.css'
+import './styleNav.css'
 import CartWidget from '../CartWidget/CartWidget';
 import Logo from './Logo.png'
+import { NavLink } from 'react-router-dom';
 
 function navBar(props) {
     return (
         <div className='containerHeader'>
 
             <div>
-                <a href="#"><img src={Logo} width={150} alt="logo"/></a>
+                <a href="#"><img src={Logo} width={150} alt="logo" /></a>
             </div>
 
             <div>
@@ -16,14 +17,12 @@ function navBar(props) {
             </div>
 
             <ul className='containerList'>
-                <li><a href="#">Inicio</a></li>
-                <li><a href="#">Productos</a></li>
-                <li><a href="#">Nosotros</a></li>
-                <li><a href="#">Contacto</a></li>
-                <li><a href="#">Consejos</a></li>
+                <li><NavLink to='/category/Pipas' className={nav => nav.isActive ? 'nav-active' : ''}>Pipas</NavLink></li>
+                <li><NavLink to='/category/Tabaco' className={nav => nav.isActive ? 'nav-active' : ''}>Tabaco</NavLink></li>
+                <li><NavLink to='/category/Encendedores' className={nav => nav.isActive ? 'nav-active' : ''}>Encendedores</NavLink></li>
             </ul>
 
-            <CartWidget/>
+            <CartWidget />
         </div>
     );
 }

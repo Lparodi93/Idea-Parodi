@@ -1,6 +1,7 @@
 import React from 'react';
-import { Card, Button, Row } from 'react-bootstrap';
+import { Card } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { Link } from 'react-router-dom';
 import './itemStyle.css'
 
 function Item({ item }) {
@@ -12,12 +13,10 @@ function Item({ item }) {
                 </Card.Header>
                 <Card.Img className='p-2' variant="top" src={item.imgUrl} width="15" height="220" />
                 <Card.Body>
-                    <Card.Title>{item.price}</Card.Title>
-                    {/* <Card.Text>
-                        Some quick example text to build on the card title and make up the bulk of
-                        the card's content.
-                    </Card.Text> */}
-                    {/* <Button variant="primary">Comprar</Button> */}
+                    <Card.Title className='p-2'>{item.price}</Card.Title>
+                    <Link className='goData' to={'/item/' + item.id}>
+                        <button>Ver más</button>
+                    </Link>
                 </Card.Body>
             </Card>
         </div>
