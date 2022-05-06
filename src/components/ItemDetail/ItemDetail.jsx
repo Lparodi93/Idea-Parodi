@@ -14,7 +14,7 @@ function ItemDetail({ item }) {
 
 
             <div className='countContainer'>
-                <h3>Pipa Mercure</h3>
+                <h3>{item.name}</h3>
                 <p>Cant Disponible: {item.stock}</p>
                 <ItemCount stock={item.stock} initial={1} onAdd />
                 <p className='priceProduct'>{item.price}</p>

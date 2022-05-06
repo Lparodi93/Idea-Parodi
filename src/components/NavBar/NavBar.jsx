@@ -2,14 +2,14 @@ import React from 'react';
 import './styleNav.css'
 import CartWidget from '../CartWidget/CartWidget';
 import Logo from './Logo.png'
-import { NavLink } from 'react-router-dom';
+import { NavLink, Link } from 'react-router-dom';
 
 function navBar(props) {
     return (
         <div className='containerHeader'>
 
             <div>
-                <a href="#"><img src={Logo} width={150} alt="logo" /></a>
+                <Link to={'/'}><img src={Logo} width={150} alt="logo"/></Link>
             </div>
 
             <div>
