@@ -16,25 +16,20 @@ function ItemCount({ stock, initial, onAdd }) {
         }
     }
 
-    const addToCart = () => {
-        const msj = `Agregaste ${count} productos al carrito`;
-        count == 1 ? alert(`Agregaste ${count} producto al carrito`) : alert(msj);
-    }
-
     return (
         <div className='containerCount'>
             <div className='count'>
 
                 <div className='controlContainer'>
                     <div className='control'>
-                        <button onClick={decrement}>-</button>
+                        <button onClick={()=> decrement()}>-</button>
                         <p>{count}</p>
-                        <button onClick={increment}>+</button>
+                        <button onClick={()=> increment()}>+</button>
                     </div>
                 </div>
 
                 <div className='btnCarrito'>
-                    <button className='btn' onClick={addToCart}>Agregar al Carrito</button>
+                    <button className='btn' onClick={ () => (count <= stock) && onAdd(count)}>Agregar al Carrito</button>
                 </div>
             </div>
         </div>

@@ -47,10 +47,7 @@ function getItem(id) {
         ];
 
         const item = myProducts.filter(item => item.id === parseInt(id));
-
-        setTimeout(() => {
-            resolve(item[0]);
-        }, 2000);
+        resolve(item[0]);
     })
     return myPromise;
 }

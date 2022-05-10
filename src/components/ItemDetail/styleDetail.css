@@ -32,3 +32,13 @@
     background-color: brown;
     border-radius: 5px;
 }
+
+.buy{
+    border-radius: 10px;
+    
+}
+
+.styleLink {
+    color: black;    
+    text-decoration: none;
+}
