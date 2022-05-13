@@ -42,3 +42,8 @@
     color: black;    
     text-decoration: none;
 }
+
+.optionBuy button {
+    margin: 5px;
+    border-radius: 5px;
+}
