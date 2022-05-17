@@ -6,8 +6,9 @@ const CartContext = createContext({
     removeItem: () => { },
     clear: () => { },
     isInCart: () => { },
-    getCartQuantity: () => {}
-})
+    getCartQuantity: () => {},
+    getTotalPrice: () => {}
+});
 
 export const CartContextProvider = ({ children }) => {
     const [productList, setProductList] = useState([]);
@@ -29,7 +30,7 @@ export const CartContextProvider = ({ children }) => {
         if (productList[indexToRemove].quantity === 1) {
             setProductList(productList.filter(i => i.id !== id))
         } else {
-            setProductList(productList.map(p => p.id === id ? { ...p, quantity: p.quantity - 1 } : p))
+            setProductList(productList.map(p => p.id === id ? { ...p, quantity: p.quantity - 1 } : p));
         }
     }
 
@@ -47,6 +48,12 @@ export const CartContextProvider = ({ children }) => {
         }, 0)
     }
 
+    function getTotalPrice() {
+        return productList.reduce((total, value) => {
+            return total + value.price*value.quantity
+        }, 0)
+    }
+
     return (
         <>
             <CartContext.Provider value={{
@@ -55,7 +62,8 @@ export const CartContextProvider = ({ children }) => {
                 removeItem,
                 clear,
                 isInCart,
-                getCartQuantity
+                getCartQuantity,
+                getTotalPrice
             }}>
                 {children}
             </CartContext.Provider>

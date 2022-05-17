@@ -1,0 +1,13 @@
+.containerGlobo {
+    margin: 12px;
+}
+
+.widgetContainer {
+    padding: 5px;
+}
+
+.globoMove {
+    position: relative;
+    bottom: 60px;
+    right: 20px;
+}

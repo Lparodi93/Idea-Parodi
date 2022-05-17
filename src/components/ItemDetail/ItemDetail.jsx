@@ -15,20 +15,18 @@ function ItemDetail({ item }) {
         <div className='itemContainer'>
 
             <div className='imgContainer'>
-                <img src={item.imgUrl} alt="imagen" />
+                <img src={item.imgUrl} alt="imagen"/>
             </div>
 
             <div className='countContainer'>
                 <h3>{item.name}</h3>
                 <p>Cant Disponible: {item.stock}</p>
+                <p className='priceProduct'>${item.price}</p>
                 <div className='optionBuy'>
-                    <ItemCount stock={item.stock} initial={1} onAdd={addHandler} />
-                    <button onClick={() => console.log(cartTxt.products)}>Ver Carrito</button>
-                    <button onClick={() => console.log(cartTxt.isInCart(item.id))} >Is in cart</button>
-                    <button onClick={() => cartTxt.removeItem(item.id)} >Eliminar Producto</button>
-                    <button onClick={() => cartTxt.clear()} >Limpiar Carrito</button>
+
                     <div>
-                        {cartTxt.products.length &&
+                        <ItemCount stock={item.stock} initial={1} onAdd={addHandler} />
+                        {cartTxt.isInCart(item.id) &&
                             <button className='buy'>
                                 {
                                     <Link className='styleLink' to='/cart'>
@@ -38,9 +36,7 @@ function ItemDetail({ item }) {
                             </button>
                         }
                     </div>
-
                 </div>
-                <p className='priceProduct'>{item.price}</p>
             </div>
         </div>
     );
