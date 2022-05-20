@@ -1,6 +1,3 @@
 .containerProduct {
-    display: flex;
-    justify-content: center;
     background-color: wheat;
-    height: 100vh;
 }

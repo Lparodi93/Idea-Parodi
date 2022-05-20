@@ -1,6 +1,5 @@
 import React, { useContext } from 'react';
 import CartContext from '../../Store/CartContexts';
-import Globito from '../Globito/Globito.jsx'
 import './cartItem.css'
 
 function CartItem({ item }) {

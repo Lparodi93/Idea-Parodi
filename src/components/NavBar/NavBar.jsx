@@ -4,7 +4,7 @@ import CartWidget from '../CartWidget/CartWidget';
 import Logo from './Logo.png'
 import { NavLink, Link } from 'react-router-dom';
 
-function navBar(props) {
+function navBar() {
     return (
         <div className='containerHeader'>
 
@@ -18,8 +18,8 @@ function navBar(props) {
 
             <ul className='containerList'>
                 <li><NavLink to='/category/Pipas' className={nav => nav.isActive ? 'nav-active' : ''}>Pipas</NavLink></li>
-                <li><NavLink to='/category/Tabaco' className={nav => nav.isActive ? 'nav-active' : ''}>Tabaco</NavLink></li>
-                <li><NavLink to='/category/Encendedores' className={nav => nav.isActive ? 'nav-active' : ''}>Encendedores</NavLink></li>
+                <li><NavLink to='/category/Puros' className={nav => nav.isActive ? 'nav-active' : ''}>Puros</NavLink></li>
+                <li><NavLink to='/category/Otros' className={nav => nav.isActive ? 'nav-active' : ''}>Otros</NavLink></li>
             </ul>
 
             <CartWidget />
