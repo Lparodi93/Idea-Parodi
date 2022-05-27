@@ -5,7 +5,7 @@ import './itemList.css'
 function ItemList({ data }) {
     return (
         <div className='itemListContainer'>
-            {data.map((i) => (<Item item={i} name={i.name} key={i.id} id={i.id} image={i.imgUrl} price={i.price}/>))}
+            {data.map(i => <Item item={i} key={i.id}/>)}
         </div>
     );
 }

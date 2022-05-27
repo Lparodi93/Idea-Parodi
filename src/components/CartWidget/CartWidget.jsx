@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import LogoCarrito from './LogoCarrito.png'
-import CartContext from '../../Store/CartContexts'
+import CartContext from '../../Store/CartContext'
 import Globito from '../Globito/Globito';
 import './cartWidget.css'
 

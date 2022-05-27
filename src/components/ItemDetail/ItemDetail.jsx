@@ -1,11 +1,11 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
-import ItemCount from '../ItemCount/ItemCount'
-import CartContexts from '../../Store/CartContexts'
+import CartContext from '../../Store/CartContext';
+import ItemCount from '../ItemCount/ItemCount';
 import './styleDetail.css'
 
-function ItemDetail({ item }) {
-    const cartTxt = useContext(CartContexts);
+const ItemDetail = ({ item }) => {
+    const cartTxt = useContext(CartContext);
 
     function addHandler(quantityToAdd) {
         cartTxt.addItem({ quantity: quantityToAdd, ...item });
@@ -15,7 +15,7 @@ function ItemDetail({ item }) {
         <div className='itemContainer'>
 
             <div className='imgContainer'>
-                <img src={item.imgUrl} alt="imagen"/>
+                <img src={item.imgUrl} alt="imagen" />
             </div>
 
             <div className='countContainer'>
@@ -26,13 +26,12 @@ function ItemDetail({ item }) {
 
                     <div>
                         <ItemCount stock={item.stock} initial={1} onAdd={addHandler} />
+
                         {cartTxt.isInCart(item.id) &&
-                            <button className='buy'>
-                                {
-                                    <Link className='styleLink' to='/cart'>
-                                        Terminar compra ({cartTxt.getCartQuantity()} items)
-                                    </Link>
-                                }
+                            <button>
+                                <Link to='/cart'>
+                                    Terminar compra ({cartTxt.getCartQuantity()} items)
+                                </Link>
                             </button>
                         }
                     </div>

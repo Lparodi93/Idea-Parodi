@@ -5,16 +5,16 @@ import db from '../../services/firebase';
 import { getDoc, doc } from 'firebase/firestore';
 
 function ItemDetailContainer() {
-    const [item, setItem] = useState();
     const { id } = useParams();
-
+    const [selectedItem, setSelectedItem] = useState({});
+    
     const getSelected = async (idItem) => {
         try {
-            const document = doc(db, "Items", idItem)
+            const document = doc(db, "items", idItem)
             const response = await getDoc(document)
             const result = { id: response.id,...response.data() }
-
-            setItem(result)
+            
+            setSelectedItem(result)
         } catch (error) {
             console.log(error)
         }
@@ -26,7 +26,7 @@ function ItemDetailContainer() {
 
     return (
         <div>
-            <ItemDetail item={item} />
+            <ItemDetail item={selectedItem} />
         </div>
     );
 }
