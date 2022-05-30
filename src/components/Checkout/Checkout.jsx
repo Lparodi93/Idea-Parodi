@@ -2,11 +2,12 @@ import React, { useContext, useState } from 'react';
 import CartContext from '../../Store/CartContext';
 import { addDoc, collection } from 'firebase/firestore';
 import db from '../../services/firebase';
+import './check.css';
 
 function Checkout() {
 
     const { getTotalPrice, products } = useContext(CartContext)
-    
+
 
     const [buyer, setBuyer] = useState({
         Nombre: '',
@@ -14,7 +15,7 @@ function Checkout() {
         Teléfono: ''
     })
 
-    const { Nombre, Email, Teléfono } = buyer
+    const { Nombre, Email, Teléfono } = buyer;
 
     const handleInputChange = (e) => {
         setBuyer(({
@@ -46,41 +47,45 @@ function Checkout() {
     }
 
     return (
-        <>
-            <h1>Finalizando Comrpa</h1>
-            <h4>Completar Datos:</h4>
+        <div className='containerData'>
+            <div>
+                <h1>Finalizando Compra</h1>
+                <h4>Completar Datos:</h4>
+            </div>
 
-            <form onSubmit={handleSubmit}>
-                <input
-                    type="text"
-                    name='Nombre'
-                    placeholder='Ingrese Nombre'
-                    value={Nombre}
-                    onChange={handleInputChange}
-                />
+            <div className='formData'>
+                <form onSubmit={handleSubmit}>
+                    <input
+                        type="text"
+                        name='Nombre'
+                        placeholder='Ingrese Nombre'
+                        value={Nombre}
+                        onChange={handleInputChange}
+                    />
 
-                <input
-                    type="email"
-                    name='Email'
-                    placeholder='Ingrese un email'
-                    value={Email}
-                    onChange={handleInputChange}
-                />
+                    <input
+                        type="email"
+                        name='Email'
+                        placeholder='Ingrese un email'
+                        value={Email}
+                        onChange={handleInputChange}
+                    />
 
-                <input
-                    type="number"
-                    name='Teléfono'
-                    placeholder='Ingrese un teléfono'
-                    value={Teléfono}
-                    onChange={handleInputChange}
-                />
+                    <input
+                        type="text"
+                        name='Teléfono'
+                        placeholder='Ingrese un teléfono'
+                        value={Teléfono}
+                        onChange={handleInputChange}
+                    />
 
-                <input
-                    type="submit"
-                    value="Finalizar Compra"
-                />
-            </form>
-        </>
+                    <input
+                        type="submit"
+                        value="Finalizar Compra"
+                    />
+                </form>
+            </div>
+        </div>
     );
 }
 export default Checkout

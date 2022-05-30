@@ -1,0 +1,20 @@
+.containerData {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    background-color: bisque;
+    height: 100vh;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 50%;
+    margin-bottom: 30%;
+}
+
+.formData {
+    display: flex;
+    justify-content: center;
+}

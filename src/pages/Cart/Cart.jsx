@@ -20,12 +20,12 @@ function Cart() {
                         <button>Finalizar Compra</button>
                     </Link>
                 </div> :
-                <>
+                <div className='cartFlex'>
                     <h2>No hay Productos en el carrito</h2>
                     <button>
                         <Link to='/'>Volver al Inicio</Link>
                     </button>
-                </>
+                </div>
             }
         </div >
     );

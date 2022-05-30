@@ -15,9 +15,6 @@
 .listContainer {
     height: auto;
     background-color: bisque;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
 }
 
 .imgContainer {
