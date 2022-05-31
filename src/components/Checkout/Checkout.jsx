@@ -8,7 +8,6 @@ function Checkout() {
 
     const { getTotalPrice, products } = useContext(CartContext)
 
-
     const [buyer, setBuyer] = useState({
         Nombre: '',
         Email: '',
@@ -27,8 +26,7 @@ function Checkout() {
     const generateOrder = async (data) => {
         try {
             const coll = collection(db, "Orders")
-            const order = await addDoc(coll, data)
-            console.log("order", order)
+            const order = await addDoc(coll,data)
             console.log("order", order.id)
         }
         catch (error) {
@@ -39,7 +37,7 @@ function Checkout() {
     const handleSubmit = (e) => {
         e.preventDefault()
         const day = new Date()
-        const items = products.map(e => { return { id: e.id, title: e.name, price: e.price, amount: e.getTotalPrice } })
+        const items = products.map(e => { return { id: e.id, title: e.name, price: e.price, amount: e.quantity} })
         const total = getTotalPrice()
         const data = { buyer, items, day, total }
         console.log("data", data)
