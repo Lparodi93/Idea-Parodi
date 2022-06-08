@@ -4,18 +4,22 @@ import ItemList from '../../components/ItemList/ItemList';
 import db from '../../services/firebase';
 import { collection, getDocs, query, where } from 'firebase/firestore';
 import './styleCart.css';
+import Spinner from '../../components/Spinner/Spinner';
 
 function ItemListContainer() {
     const [products, setProducts] = useState([]);
+    const [load, setLoad] = useState(true);
     const { categoryId } = useParams();
 
     const getData = async (category) => {
         try {
+            setLoad(true)
             const document = category ? query(collection(db, "items"), where('category', '==', category)) :
                 collection(db, "items");
             const coll = await getDocs(document);
-            const result = coll.docs.map((doc) => doc = { id: doc.id,...doc.data() })
+            const result = coll.docs.map((doc) => doc = { id: doc.id, ...doc.data() })
             setProducts(result)
+            setLoad(false)
         } catch (error) {
             alert("revisar la consola");
         }
@@ -27,7 +31,7 @@ function ItemListContainer() {
 
     return (
         <div className='containerProduct'>
-            <ItemList data={products} />
+            {load ? <Spinner /> : <ItemList data={products} />}
         </div>
     )
 }

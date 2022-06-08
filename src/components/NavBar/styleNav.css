@@ -1,5 +1,7 @@
 .containerHeader {
     position: sticky;
+    top: 0;
+    z-index: 999;
     background-image: linear-gradient(to left, #310b0b, #500b0b, black);
     display: flex;
     justify-content: space-evenly;
@@ -8,7 +10,8 @@
 
 .containerHeader h1 {
     color: wheat;
-    font-family: sans-serif;
+    font-family: cursive;
+    font-size: 25px;
 }
 
 .containerList {
@@ -20,6 +23,7 @@
 
 .containerList li a {
     font-size: 20px;
+    font-family: cursive;
     text-decoration: none;
     padding: 10px;
     color: wheat;

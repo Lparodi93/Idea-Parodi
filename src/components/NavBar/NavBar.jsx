@@ -13,7 +13,7 @@ function navBar() {
             </div>
 
             <div>
-                <h1>Fenix Tabaco</h1>
+                <h1>Tienda Online</h1>
             </div>
 
             <ul className='containerList'>

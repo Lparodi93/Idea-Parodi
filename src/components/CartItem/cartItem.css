@@ -14,7 +14,7 @@
 
 .listContainer {
     height: auto;
-    background-color: bisque;
+    background-color: rgb(46, 46, 46);
 }
 
 .imgContainer {
@@ -22,9 +22,21 @@
 }
 
 .productContainer {
+    display: flex;
+    gap: 30px;
     margin: 1%;
     border: 2px solid black;
     border-radius: 10px;
-    padding: 15px;
+    padding: 30px;
+    background-color: rgb(26, 24, 24);
+}
+
+.dataProd {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    color: white;
 }
 

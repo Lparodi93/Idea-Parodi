@@ -8,7 +8,7 @@ const Item = ({ item }) => {
 
     return (
         <div className='p-3'>
-            <Card className='bg-warning p-2' style={{ width: '14rem' }}>
+            <Card className='p-2 colorCard' style={{ width: '14rem' }}>
                 <Card.Header>
                     <Card.Title>{item.name}</Card.Title>
                 </Card.Header>

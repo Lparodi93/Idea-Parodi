@@ -4,11 +4,13 @@ import { addDoc, collection } from 'firebase/firestore';
 import db from '../../services/firebase';
 import './check.css';
 import { Link } from 'react-router-dom';
+import Spinner from '../../components/Spinner/Spinner';
 
 function Checkout() {
 
     const { getTotalPrice, products, clear } = useContext(CartContext)
     const [orderId, setOrderId] = useState()
+    const [load, setLoad] = useState(false)
     const [buyer, setBuyer] = useState({
         Nombre: '',
         Email: '',
@@ -26,10 +28,12 @@ function Checkout() {
 
     const generateOrder = async (data) => {
         try {
+            setLoad(true)
             const coll = collection(db, "Orders")
             const order = await addDoc(coll, data)
             setOrderId(order.id)
             clear()
+            setLoad(false)
             console.log("order", order.id)
         }
         catch (error) {
@@ -50,48 +54,48 @@ function Checkout() {
     return (
         <div className='containerData'>
 
-            
+            {load ? <Spinner />
+                :
+                (!orderId && <div>
+                    <h1>Finalizando Compra</h1>
 
-            {!orderId&&<div>
-                <h1>Finalizando Compra</h1>
-                
-                <div>
-                    <h4>Completar Datos:</h4>
-                </div>
-                
-                <div className='formData'>
-                    <form onSubmit={handleSubmit}>
-                        <input
-                            type="text"
-                            name='Nombre'
-                            placeholder='Ingrese Nombre'
-                            value={Nombre}
-                            onChange={handleInputChange}
-                        />
+                    <div>
+                        <h4>Completar Datos:</h4>
+                    </div>
 
-                        <input
-                            type="email"
-                            name='Email'
-                            placeholder='Ingrese un email'
-                            value={Email}
-                            onChange={handleInputChange}
-                        />
+                    <div className='formData'>
+                        <form onSubmit={handleSubmit}>
+                            <input
+                                type="text"
+                                name='Nombre'
+                                placeholder='Ingrese Nombre'
+                                value={Nombre}
+                                onChange={handleInputChange}
+                            />
 
-                        <input
-                            type="text"
-                            name='Teléfono'
-                            placeholder='Ingrese un teléfono'
-                            value={Teléfono}
-                            onChange={handleInputChange}
-                        />
+                            <input
+                                type="email"
+                                name='Email'
+                                placeholder='Ingrese un email'
+                                value={Email}
+                                onChange={handleInputChange}
+                            />
 
-                        <input
-                            type="submit"
-                            value="Finalizar Compra"
-                        />
-                    </form>
-                </div>
-            </div>
+                            <input
+                                type="text"
+                                name='Teléfono'
+                                placeholder='Ingrese un teléfono'
+                                value={Teléfono}
+                                onChange={handleInputChange}
+                            />
+
+                            <input
+                                type="submit"
+                                value="Finalizar Compra"
+                            />
+                        </form>
+                    </div>
+                </div>)
             }
 
             <div>
